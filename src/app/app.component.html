@@ -10,8 +10,9 @@
           class="list-group-item">
         </li>
       </ul>
+      <p *ngIf="onlyOdd">Show me only when odd via *ngIf</p>
       <ng-template [ngIf]="onlyOdd">
-        <p>Only odd</p>
+        <p>Show me only when odd via ng-template and [ngIf]</p>
       </ng-template>
     </div>
   </div>
