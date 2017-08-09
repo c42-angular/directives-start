@@ -14,12 +14,22 @@
       <ng-template [ngIf]="onlyOdd">
         <p>Show me only when odd via ng-template and [ngIf]</p>
       </ng-template>
+       <ng-template [appUnless]="!onlyOdd">
+        <p>Show me only when odd via ng-template and appUnless &amp; setUnless exlicit property</p>
+      </ng-template>
+      <p *appUnless="!onlyOdd">Show me only when odd via *appUnless</p>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
       <p appBasicHighlight>Set with basic highlight</p>
-      <p [appBetterHighlight]="'red'" [defaultColor]="'yellow'">Set with better highlight</p>
+      <p [appBetterHighlight]="'red'" defaultColor="yellow">Set with better highlight</p>
     </div>
+  </div>
+  <div [ngSwitch]="value">
+    <p *ngSwitchCase="5">Value is 5</p>
+    <p *ngSwitchCase="10">Value is 10</p>
+    <p *ngSwitchCase="15">Value is 15</p>
+    <p *ngSwitchDefault>Value is undefined</p>
   </div>
 </div>
